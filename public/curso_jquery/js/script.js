@@ -1,45 +1,71 @@
 $(function () {
 
-    // EVENTO NAVEGADOR: error()
+    var exemple = $('.ex1');
 
-    // $('img').on("error", function () {
-    //     $('img').attr("src", "img/error.png");
-    // });
+    // CLICK -----------------------------------
+    $('.ev1').click(function () {
+        $(this).css({background: '#ccc'});
+        exemple.text("Você clicou!");
+    });
 
-    // $('img').on("error", function () {
-    //     var imagem = $(this).attr("src");
-    //     alert('Imagem ' + imagem + ' Indisponível');
-    //     $('img').attr("src", "img/error.png");
-    // });
+    // DOIS CLICKS -----------------------------------
+    $('.ev2').dblclick(function () {
+        $(this).css({background: '#ccc'});
+        exemple.text("Você deu 2 cliques!");
+    });
 
+    // FOCUS -----------------------------------
+    $('.ev3').focusin(function () {
+        $(this).css({background: '#ccc'});
+        exemple.text("Você deu foco!");
+    }).focusout(function () {
+        $(this).css({background: '#000'});
+        exemple.text("Você tirou o foco!");
+    });
 
-    // EVENTO NAVEGADOR: recize()
-    // $('img')
-    //     .width($(window).width())
-    //     .height($(window).height());
-    // $(window).resize(function () {
-    //     $('img')
-    //         .width($(window).width())
-    //         .height($(window).height());
-    // });
+    // HOVER -----------------------------------
+    $('.ev4').hover(function () {
+        $(this).css({background: '#ccc'});
+        exemple.text("Você passou o mouse!");
+    });
 
+    // APERTO O CLICK -----------------------------------
+    $('.ev5').mousedown(function () {
+        $(this).css({background: '#ccc'});
+        exemple.text("Você APERTOU o botão do mouse!");
+        // SOLTO O CLICK
+    }).mouseup(function () {
+        $(this).css({background: '#000'});
+        exemple.text("Você SOUTOU o botão do mouse!");
+    });
 
-    // EVENTO NAVEGADOR: scroll()
+    //TER CUIDADO COM OS FILHOS DO ELEMENTO -----------------------------------
+    // mouse_enter()
+    var a = 0;
+    $('.ev6').mouseenter(function () {
+       a += 1;
+       exemple.text("Entradas do Mouse: " + a);
+        // mouse_out()
+    }).mouseout(function () {
+        exemple.text("Saida do Mouse");
+    });
+    var b = 0;
+    // mouse_over()
+    $('.ev7').mouseover(function () {
+        b += 1;
+        exemple.text("Etradas do Mouse: " + b);
+        // mouse_leave()
+    }).mouseleave(function () {
+        exemple.text("Mouse Leave");
+    });
 
-    // $(window).scroll(function () {
-    //     $('img').fadeOut('1000');
-    // });
+    // VE A MOVIMENTACAO DO MOUSE (pixels) -----------------------------------
+    $('.ev8').mousemove(function (move) {
+        var localx = move.pageX;
+        var localy = move.pageY;
 
-    $('body').css("height", "5000px");
-
-    $(window).scroll(function () {
-        var topo = $(window).scrollTop();
-
-        if (topo > 400){
-            $('img').fadeOut('1000');
-        }else{
-            $('img').fadeIn('1000');
-        }
+        exemple.text("Movimento X: " +localx+ " - Movimento Y: " +localy);
     });
 
 });
+
