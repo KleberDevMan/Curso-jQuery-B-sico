@@ -11,79 +11,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<!--div.ex1{Aguardando Ação}+p.ev1{Um Click}-->
+
 <div class="ex1">Aguardando Ação</div>
 
-<form action="">
-    <label>
-        <input class="place ev1" title="Digite seu nome" type="text" name="nome">
-    </label>
-    <label>
-        <input class="place ev2" title="Digite seu nome" type="text" name="email">
-    </label>
-    <label>
-        <input class="place" title="Digite seu nome" type="text">
-    </label>
-    <label>
-        <textarea class="place key ev3" title="Digite seu nome" cols="30" rows="10"></textarea>
-    </label>
-    <label>
-        <button class="selecionar">Selecionar</button><br>
-        <button>Enviar</button><br>
-        <button>Cancelar</button>
-    </label>
-</form>
+<p class="ev1">Hide</p>
+<p class="ev2">Show</p>
+<p class="ev3">Toggle</p>
 
+<input type="text" class="ev4">
 
-<script type="text/javascript">
-    // PLACEHOLDER()
-    $('.place').each(function () {
-        var place = $(this).attr('title');
-        var input = $(this);
-        input
-            .val(place)
-            .css('color', '#ccc')
-            .focusin(function () {
-                if (input.val() == place) {
-                    input.val('');
-                }
-            })
-            .focusout(function () {
-                if (input.val() == '') {
-                    input.val(place);
-                    input.css('color', '#ccc');
-                }
-            });
-    });
-
+<script>
     var painel = $('.ex1');
 
-    // FOCUS()
-    $('.ev1').focus(function () {
-        painel.text($(this).attr('title'));
-    }).keyup(function () {
-       if($(this).val() == 'pontocom'){
-           $('.ev2').focus();
-       }
+    // Hide()
+    $(".ev1").click(function () {
+        // painel.hide('slow');
+        painel.hide('fast');
+        // painel.hide('5000');
     });
 
-    // EXIT() **Saida de um campo
-    // $('.ev1').blur(function () {
-    //    painel.text('Saiu do campo ' + $(this).attr('name'));
-    // });
-
-    // CHANGE()
-    $('.ev1').change(function () {
-       painel.text('Campo alterado: ' + $(this).val());
+    // Show()
+    $('.ev2').click(function () {
+        // painel.show('slow');
+        painel.show('fast');
+        // painel.show('5000');
     });
 
-    // SELECT()
-    $('.selecionar').click(function () {
-        $('.ev3').select();
-        // Cancela o submit de um formulário
-        $('form').submit(function () {
-           return false;
-        });
+    // Toggle() - Alterna
+    $('.ev3').click(function () {
+        painel.toggle('slow');
+    });
+
+    // KeyUp
+    $('.ev4').keyup(function () {
+        var text = $(this).val();
+
+        if (text == 'hide'){
+            painel.hide('fast');
+        }
+
+        if (text == 'show'){
+            painel.show('fast');
+        }
+
+        if (text == 'toggle'){
+            painel.toggle('slow');
+        }
+
     });
 
 </script>
