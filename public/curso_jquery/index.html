@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eventos de mouse</title>
+    <title>JQuery</title>
 
     <!--custom stylesheet-->
     <link rel="stylesheet" href="css/stylo.css">
@@ -13,52 +13,42 @@
 <body>
 
 <div class="ex1">Aguardando Ação</div>
+<div class="ex2">Aguardando Ação</div>
 
-<p class="ev1">Hide</p>
-<p class="ev2">Show</p>
-<p class="ev3">Toggle</p>
-
-<input type="text" class="ev4">
+<button type="button">Botão</button>
 
 <script>
+
     var painel = $('.ex1');
+    var painel2 = $('.ex2');
+    var button = $(':button');
 
-    // Hide()
-    $(".ev1").click(function () {
-        // painel.hide('slow');
-        painel.hide('fast');
-        // painel.hide('5000');
+    // // FADE_OUT()
+    // button.click(function () {
+    //     painel.fadeOut('slow');
+    //     // FADE_IN()
+    // }).dblclick(function () {
+    //     painel.fadeIn('slow');
+    // });
+
+    // // FATE_TOGGLE()
+    // button.click(function () {
+    //     painel.fadeToggle('slow');
+    // });
+
+    // // FADE_TO() (OPACIDADE)
+    // button.click(function () {
+    //     painel.fadeTo("slow",0.3);
+    // });
+
+    // EVENTO DEPOIS QUE EVENTO ACABAR
+    button.click(function () {
+        painel.fadeTo(2000,0.4, function () {
+            painel2.fadeTo('slow',0.2);
+        });
     });
 
-    // Show()
-    $('.ev2').click(function () {
-        // painel.show('slow');
-        painel.show('fast');
-        // painel.show('5000');
-    });
 
-    // Toggle() - Alterna
-    $('.ev3').click(function () {
-        painel.toggle('slow');
-    });
-
-    // KeyUp
-    $('.ev4').keyup(function () {
-        var text = $(this).val();
-
-        if (text == 'hide'){
-            painel.hide('fast');
-        }
-
-        if (text == 'show'){
-            painel.show('fast');
-        }
-
-        if (text == 'toggle'){
-            painel.toggle('slow');
-        }
-
-    });
 
 </script>
 

@@ -12,4 +12,7 @@
 
 - 08: Eventos de formulário: Focus, Blur, Change e SelectText
 
-- 09:  
+- 09: Efeitos de desvanecimento: Hide, Show e Toggle
+
+- 10: Efeitos de desvanecimento: FadeTo, FadeIn, CallBack(O retorno de uma função iniciar outra)
+
