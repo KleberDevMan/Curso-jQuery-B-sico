@@ -9,40 +9,37 @@
 
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 </head>
 <body>
-
 <!--div.ex1{Aguardando Ação}+p.ev1{Um Click}-->
 <div class="ex1">Aguardando Ação</div>
 
 <form action="">
     <label>
-        <input class="place" title="Digite seu nome" type="text" >
+        <input class="place ev1" title="Digite seu nome" type="text" name="nome">
+    </label>
+    <label>
+        <input class="place ev2" title="Digite seu nome" type="text" name="email">
     </label>
     <label>
         <input class="place" title="Digite seu nome" type="text">
     </label>
     <label>
-    <input class="place" title="Digite seu nome" type="text">
+        <textarea class="place key ev3" title="Digite seu nome" cols="30" rows="10"></textarea>
     </label>
     <label>
-    <textarea class="place key" title="Digite seu nome" cols="30" rows="10"></textarea>
-    </label>
-    <label>
-    <button>Botão</button><br>
-    <button>Enviar</button>
+        <button class="selecionar">Selecionar</button><br>
+        <button>Enviar</button><br>
+        <button>Cancelar</button>
     </label>
 </form>
 
 
 <script type="text/javascript">
-
-    // Placeholder
+    // PLACEHOLDER()
     $('.place').each(function () {
         var place = $(this).attr('title');
         var input = $(this);
-
         input
             .val(place)
             .css('color', '#ccc')
@@ -59,22 +56,37 @@
             });
     });
 
-    // KeyPress
     var painel = $('.ex1');
 
-    // Tempo real
-    $('.key').keyup(function () {
-        painel.text($(this).val());
+    // FOCUS()
+    $('.ev1').focus(function () {
+        painel.text($(this).attr('title'));
+    }).keyup(function () {
+       if($(this).val() == 'pontocom'){
+           $('.ev2').focus();
+       }
     });
 
-    // Delay de 1 tecla
-    // $('.key').keypress(function () {
-    //     painel.text($(this).val());
+    // EXIT() **Saida de um campo
+    // $('.ev1').blur(function () {
+    //    painel.text('Saiu do campo ' + $(this).attr('name'));
     // });
 
+    // CHANGE()
+    $('.ev1').change(function () {
+       painel.text('Campo alterado: ' + $(this).val());
+    });
 
-
+    // SELECT()
+    $('.selecionar').click(function () {
+        $('.ev3').select();
+        // Cancela o submit de um formulário
+        $('form').submit(function () {
+           return false;
+        });
+    });
 
 </script>
+
 </body>
 </html>

@@ -8,4 +8,8 @@
 
 - 06: Eventos do mouse: click, 2click, focus e movimentação
 
-- 07: Eventos formulário: PlaceHolder e KeyPress
+- 07: Eventos formulário e teclado: PlaceHolder e KeyPress
+
+- 08: Eventos de formulário: Focus, Blur, Change e SelectText
+
+- 09:  
