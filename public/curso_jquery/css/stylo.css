@@ -9,17 +9,19 @@ body{font-size:14px;}
     color: #fff
 }
 
-p, input{
-    width: 480px;
-    padding: 5px;
-    background: #000;
-    margin: 0 auto;
+label{
+    display: block;
     text-align: center;
-    color: #fff;
-    border: 5px solid #ccc;
-    margin-top: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    background: #F8F8FF;
 }
 
-input{
-    display: block;
+input, textarea{
+    padding: 5px;
+    width: 450px;
+}
+
+button{
+    width: 465px;
 }

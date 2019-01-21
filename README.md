@@ -7,3 +7,5 @@
 - 05: Eventos de navegador: error(); recize() e scroll()
 
 - 06: Eventos do mouse: click, 2click, focus e movimentação
+
+- 07: Eventos formulário: PlaceHolder e KeyPress

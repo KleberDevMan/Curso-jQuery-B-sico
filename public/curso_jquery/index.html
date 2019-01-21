@@ -9,24 +9,72 @@
 
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--custom javascrip-->
-    <script src="js/script.js"></script>
 
 </head>
 <body>
 
 <!--div.ex1{Aguardando Ação}+p.ev1{Um Click}-->
 <div class="ex1">Aguardando Ação</div>
-<p class="ev1">Um Click</p>
-<p class="ev2">Dois Clicks</p>
-<input type="text" class="ev3">
-<p class="ev4">Passe o mouse</p>
-<p class="ev5">Click, segure... e solte</p>
 
-<br><br><br><hr>
-<p class="ev6">Entra e <span>Sai</span> (Contador)</p>
-<p class="ev7">Mouse <span>Over</span></p>
-<p class="ev8">Mova o mouse no elemento</p>
+<form action="">
+    <label>
+        <input class="place" title="Digite seu nome" type="text" >
+    </label>
+    <label>
+        <input class="place" title="Digite seu nome" type="text">
+    </label>
+    <label>
+    <input class="place" title="Digite seu nome" type="text">
+    </label>
+    <label>
+    <textarea class="place key" title="Digite seu nome" cols="30" rows="10"></textarea>
+    </label>
+    <label>
+    <button>Botão</button><br>
+    <button>Enviar</button>
+    </label>
+</form>
 
+
+<script type="text/javascript">
+
+    // Placeholder
+    $('.place').each(function () {
+        var place = $(this).attr('title');
+        var input = $(this);
+
+        input
+            .val(place)
+            .css('color', '#ccc')
+            .focusin(function () {
+                if (input.val() == place) {
+                    input.val('');
+                }
+            })
+            .focusout(function () {
+                if (input.val() == '') {
+                    input.val(place);
+                    input.css('color', '#ccc');
+                }
+            });
+    });
+
+    // KeyPress
+    var painel = $('.ex1');
+
+    // Tempo real
+    $('.key').keyup(function () {
+        painel.text($(this).val());
+    });
+
+    // Delay de 1 tecla
+    // $('.key').keypress(function () {
+    //     painel.text($(this).val());
+    // });
+
+
+
+
+</script>
 </body>
 </html>
