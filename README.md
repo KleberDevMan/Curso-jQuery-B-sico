@@ -16,3 +16,5 @@
 
 - 10: Efeitos de desvanecimento: FadeTo, FadeIn, CallBack(O retorno de uma função iniciar outra)
 
+- 11: Menu Fixo: AddClass e RemoveClass
+

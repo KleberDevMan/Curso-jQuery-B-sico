@@ -11,44 +11,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
-<div class="ex1">Aguardando Ação</div>
-<div class="ex2">Aguardando Ação</div>
-
-<button type="button">Botão</button>
+<div id="menu">
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portifólios</a></li>
+            <li><a href="#">Clientes</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+            <li><a href="#">Contatos</a></li>
+        </ul>
+    </nav>
+</div>
 
 <script>
 
-    var painel = $('.ex1');
-    var painel2 = $('.ex2');
-    var button = $(':button');
+    var nav = $('#menu');
 
-    // // FADE_OUT()
-    // button.click(function () {
-    //     painel.fadeOut('slow');
-    //     // FADE_IN()
-    // }).dblclick(function () {
-    //     painel.fadeIn('slow');
-    // });
-
-    // // FATE_TOGGLE()
-    // button.click(function () {
-    //     painel.fadeToggle('slow');
-    // });
-
-    // // FADE_TO() (OPACIDADE)
-    // button.click(function () {
-    //     painel.fadeTo("slow",0.3);
-    // });
-
-    // EVENTO DEPOIS QUE EVENTO ACABAR
-    button.click(function () {
-        painel.fadeTo(2000,0.4, function () {
-            painel2.fadeTo('slow',0.2);
-        });
+    // Menu fixo
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 130){
+            nav.addClass("menu-fixo");
+        }else{
+            nav.removeClass("menu-fixo");
+        }
     });
-
-
 
 </script>
 

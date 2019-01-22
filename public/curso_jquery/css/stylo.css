@@ -1,36 +1,39 @@
-body{font-size:14px;}
-
-.ex1, .ex2{
-    width: 460px;
-    padding: 20px;
-    background: #1e90ff;
-    margin: 0 auto;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 5px;
+body {
+    padding-bottom:1400px;
+    padding-top:130px;
+    margin:0px;
 }
 
-label{
-    display: block;
-    text-align: center;
-    margin: 10px 0;
-    padding: 10px;
-    background: #F8F8FF;
+#menu ul {
+    padding:0px;
+    margin:0px;
+    float: left;
+    width: 100%;
+    background-color:#EDEDED;
+    list-style:none;
+    font:80% Tahoma;
 }
 
-input, textarea{
-    padding: 5px;
-    width: 450px;
+#menu ul li { display: inline; }
+
+#menu ul li a {
+    background-color:#EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom:3px solid #EDEDED;
+    padding: 2px 10px;
+    float:left;
 }
 
-button{
-    display: block;
-    width: 480px;
-    padding: 5px;
-    background: #000;
-    margin: 0 auto;
-    text-align: center;
-    color: #fff;
-    border: 5px solid #ccc;
-    margin-top: 10px;
+#menu ul li a:hover {
+    background-color:#D6D6D6;
+    color: #6D6D6D;
+    border-bottom:3px solid #EA0000;
+}
+
+.menu-fixo{
+    position: fixed;
+    top:0;
+    z-index: 999;
+    width: 100%;
 }
