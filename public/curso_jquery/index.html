@@ -11,30 +11,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<div id="menu">
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Portifólios</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Quem Somos?</a></li>
-            <li><a href="#">Contatos</a></li>
-        </ul>
-    </nav>
-</div>
+
+<figure id="slide">
+    <img src="img/cao.jpeg" alt="cachorro" width="554">
+    <img src="img/nomes-de-cachorro.jpg" alt="cachorro 2" width="554">
+    <img src="img/cachorro-correndo-bolinha-1.jpg" alt="cachorro corrento com bolinha" width="554">
+</figure>
 
 <script>
 
-    var nav = $('#menu');
+    //Pego o primeiro filho
+    $('#slide img:eq(0)').addClass("ativo").show();
 
-    // Menu fixo
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 130){
-            nav.addClass("menu-fixo");
+    var text = $('.ativo').attr('alt');
+    $('#slide').prepend("<p>"+text+"</p>");
+
+    //Temporizador
+    setInterval(slide, 3000);
+
+    function slide() {
+        
+        if ($('.ativo').next().size()){
+            $('.ativo').fadeOut().removeClass("ativo").next().fadeIn().addClass("ativo");
         }else{
-            nav.removeClass("menu-fixo");
+            $('.ativo').fadeOut().removeClass("ativo");
+            $('#slide img:eq(0)').fadeIn().addClass("ativo");
         }
-    });
+        
+    }
 
 </script>
 

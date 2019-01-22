@@ -4,7 +4,7 @@
 
 - 04: Seletores hierarquicos, e filhos de elementos
 
-- 05: Eventos de navegador: error(); recize() e scroll()
+- 05: Eventos de navegador: error(); resize() e scroll()
 
 - 06: Eventos do mouse: click, 2click, focus e movimentação
 
